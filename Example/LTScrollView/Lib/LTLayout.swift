@@ -15,13 +15,13 @@ let glt_sliderDefaultWidth: CGFloat = 40.010101010
 public class LTLayout: NSObject {
     
     /* pageView背景颜色 */
-    @objc public var titleViewBgColor: UIColor? = .white
+    @objc public var titleViewBgColor: UIColor? = UIColor.init(r: 255, g: 255, b: 255)
     
     /* 标题颜色，请使用RGB赋值 */
-    @objc public var titleColor: UIColor? = .black
+    @objc public var titleColor: UIColor? = UIColor.init(r: 0, g: 0, b: 0)
     
     /* 标题选中颜色，请使用RGB赋值 */
-    @objc public var titleSelectColor: UIColor? = .black
+    @objc public var titleSelectColor: UIColor? = UIColor.init(r: 0, g: 0, b: 0)
     
     /* 标题字号 */
     @objc public var titleFont: UIFont? = UIFont.systemFont(ofSize: 16)

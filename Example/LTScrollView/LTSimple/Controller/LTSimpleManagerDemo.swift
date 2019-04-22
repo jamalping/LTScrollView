@@ -36,6 +36,8 @@ class LTSimpleManagerDemo: UIViewController {
         let layout = LTLayout()
         layout.bottomLineHeight = 4.0
         layout.bottomLineCornerRadius = 2.0
+        layout.sliderWidth = 20
+        
         /* 更多属性设置请参考 LTLayout 中 public 属性说明 */
         return layout
     }()
@@ -65,6 +67,8 @@ class LTSimpleManagerDemo: UIViewController {
         let simpleManager = LTSimpleManager(frame: managerReact(), viewControllers: viewControllers, titles: titles, currentViewController: self, layout: layout)
         /* 设置代理 监听滚动 */
         simpleManager.delegate = self
+        
+        simpleManager.isClickScrollAnimation = true
         return simpleManager
     }()
     

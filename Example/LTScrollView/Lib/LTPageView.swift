@@ -173,6 +173,21 @@ extension UIColor {
     public convenience init(r : CGFloat, g : CGFloat, b : CGFloat) {
         self.init(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: 1.0)
     }
+    
+    /// 16进制颜色值生成UIColor
+    ///
+    /// - Parameters:
+    ///   - valueHex: 16进制颜色值
+    ///   - alpha: 透明度 默认为1
+    public convenience init(hexInt: UInt, alpha: CGFloat = 1.0) {
+        
+        self.init(
+            red: CGFloat((hexInt & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((hexInt & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(hexInt & 0x0000FF) / 255.0,
+            alpha: alpha
+        )
+    }
 }
 
 extension LTPageView: UIScrollViewDelegate {

@@ -70,8 +70,10 @@ public typealias LTDidSelectTitleViewHandle = (Int) -> Void
     }()
     
     private lazy var sliderLineView: UIView = {
-        let sliderLineView = UIView(frame: CGRect(x: layout.lrMargin, y: bounds.height - layout.bottomLineHeight - layout.pageBottomLineHeight, width: 0, height: layout.bottomLineHeight))
-        sliderLineView.backgroundColor = layout.bottomLineColor
+        
+        let sliderLineView = UIView(frame: CGRect(x: layout.lrMargin, y: bounds.height - layout.bottomLineHeight - layout.pageBottomLineHeight, width: layout.sliderWidth, height: layout.bottomLineHeight))
+        sliderLineView.addGradientLayer(startColor: UIColor.init(hexInt: 0xF088FF).cgColor, endColor: UIColor.init(hexInt: 0xE029FA).cgColor, radius: sliderLineView.frame.height/2)
+        
         return sliderLineView
     }()
     
