@@ -374,5 +374,7 @@ extension LTAdvancedManager {
         for viewController in viewControllers {
             viewController.glt_scrollView?.delegate = nil
         }
+        titleView.removeFromSuperview()
+        pageView.removeFromSuperview()
     }
 }
