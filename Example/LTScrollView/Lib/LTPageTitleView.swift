@@ -219,7 +219,7 @@ extension LTPageTitleView {
     
     private func setupTitleSelectIndex(_ btnSelectIndex: Int) {
         guard let scrollView = mainScrollView else { return }
-        if glt_currentIndex == btnSelectIndex || scrollView.isDragging || scrollView.isDecelerating {
+        if glt_currentIndex == btnSelectIndex {
             return
         }
         let totalW = bounds.width
@@ -281,7 +281,6 @@ extension LTPageTitleView {
         
         setupTitleSelectIndex(index)
     }
-    
 }
 
 extension LTPageTitleView: LTPageViewDelegate {
@@ -329,6 +328,8 @@ extension LTPageTitleView: LTPageViewDelegate {
                 setupButtonStatusAnimation(upButton: upButton, currentButton: currentButton)
             }
             
+            glt_currentIndex = index
+            
             //如果开启滚动动画
             if isClickScrollAnimation {
                 //如果不是点击事件继续在这个地方设置偏移
@@ -341,7 +342,7 @@ extension LTPageTitleView: LTPageViewDelegate {
                 glt_createViewControllerHandle?(index)
                 glt_didSelectTitleViewHandle?(index)
             }
-            glt_currentIndex = index
+
         }
         isClick = false
         

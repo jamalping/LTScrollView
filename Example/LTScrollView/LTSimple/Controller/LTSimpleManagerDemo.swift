@@ -107,6 +107,9 @@ extension LTSimpleManagerDemo {
         //MARK: pageView点击事件
         simpleManager.didSelectIndexHandle { (index) in
             print("点击了 \(index) 😆")
+            if index == 1 {
+                self.simpleManager.scrollToIndex(index: 0)
+            }
         }
         
     }
